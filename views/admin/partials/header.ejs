@@ -1,0 +1,49 @@
+<header class="admin-header">
+
+    <div class="header-left">
+        <button class="menu-btn">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M3 6h18" />
+                <path d="M3 12h18" />
+                <path d="M3 18h18" />
+
+            </svg>
+
+        </button>
+
+        <div class="title-group">
+            <h1>
+                <%= pageTitle %>
+            </h1>
+
+            <p>
+                Welcome back! Manage your electrical shop efficiently.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <div class="admin-profile">
+
+            <div class="profile-image">
+                <%= admin.username.charAt(0).toUpperCase() %>
+            </div>
+
+            <div class="profile-info">
+
+                <h4><%= admin.username %></h4>
+
+                <span>Administrator</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

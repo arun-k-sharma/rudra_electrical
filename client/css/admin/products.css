@@ -1,0 +1,114 @@
+.products-page {
+    padding: 35px;
+}
+
+.page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-top h2 {
+    color: #1E293B;
+}
+
+.add-btn {
+    background: #2563EB;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.add-btn:hover {
+    background: #1D4ED8;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #F8FAFC;
+}
+
+th {
+    text-align: left;
+    padding: 18px;
+}
+
+td {
+    padding: 18px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.product-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.badge {
+    padding: 6px 14px;
+    background: #E5E7EB;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.success {
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.edit-btn {
+    background: #2563EB;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+.delete-btn {
+    border: none;
+    background: #EF4444;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: #1D4ED8;
+}
+
+.delete-btn:hover {
+    background: #DC2626;
+}
+
+@media(max-width:900px) {
+    .products-page {
+        padding: 20px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 900px;
+    }
+
+}

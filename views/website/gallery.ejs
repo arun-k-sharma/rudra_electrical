@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{title:"Gallery"}) %>
+
+    <body>
+        <%- include('../partials/navbar') %>
+            <main>
+                <section class="page-hero">
+                    <div class="container">
+                        <span class="section-badge">
+                            📸 Our Gallery
+                        </span>
+                        <h1>Recent Projects</h1>
+                        <p>
+                            Explore our completed electrical work including house wiring,
+                            lighting installations, repairs and decorative lighting.
+                        </p>
+                    </div>
+                </section>
+                <section class="gallery-filter">
+                    <div class="container">
+                        <div class="filter-buttons">
+                            <button class="active">All</button>
+                            <button>Wiring</button>
+                            <button>Lighting</button>
+                            <button>Repairs</button>
+                            <button>Decoration</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="gallery">
+                    <div class="container">
+                        <div class="gallery-grid">
+                            <% for(let i=1;i<=12;i++){ %>
+                                <div class="gallery-item">
+                                    <img src="/images/gallery/placeholder.jpg" alt="Gallery Image">
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                </section>
+                <section class="gallery-cta">
+                    <div class="container">
+                        <h2>Need Professional Electrical Work?</h2>
+                        <p>
+                            Contact us today for fast and reliable electrical services.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="tel:+919999999999" class="btn btn-primary">
+                                📞 Call Now
+                            </a>
+                            <a href="/booking" class="btn btn-secondary">
+                                Book Service
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('../partials/footer') %>
+
+            <script src="/js/navbar.js"></script>
+    </body>
+
+</html>

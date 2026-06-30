@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{title:"Product Details"}) %>
+
+    <body>
+        <%- include('../partials/navbar') %>
+        <% console.log(product) %>
+            <main>
+                <section class="product-details">
+                    <div class="container">
+                        <div class="product-wrapper">
+                            <div class="product-image">
+                                <img src="<%=product.image%>" alt="image">
+                            </div>
+                            <div class="product-info">
+                                <span class="category">
+                                    <%=product.category%>
+                                </span>
+                                <h1>
+                                    <%=product.name%>
+                                </h1>
+                                <div class="rating">
+                                    ★★★★★
+                                    <span>(4.8)</span>
+                                </div>
+                                <h2 class="price">
+                                    ₹<%=product.price%>
+                                </h2>
+                                <span class="stock">
+                                    ✔ In Stock
+                                </span>
+                                <p class="description">
+                                    <%=product.description%>
+                                </p>
+                                <div class="buttons">
+                                    <a href="#" class="btn btn-primary">
+
+                                        📞 Call Now
+                                    </a>
+
+                                    <a href="#" class="btn btn-secondary">
+                                        💬 WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="specifications">
+                    <div class="container">
+                        <h2>Specifications</h2>
+                        <table>
+                            <tr>
+                                <td>Brand</td>
+                                <td><%=product.specifications.brand%></td>
+                            </tr>
+                            <tr>
+                                <td>Power</td>
+                                <td><%=product.specifications.power%></td>
+                            </tr>
+                            <tr>
+                                <td>Voltage</td>
+                                <td><%=product.specifications.voltage%></td>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td><%=product.specifications.color%></td>
+                            </tr>
+                            <tr>
+                                <td>Warranty</td>
+                                <td><%=product.specifications.warranty%></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section class="related-products">
+                    <div class="container">
+                        <h2>
+                            Related Products
+                        </h2>
+                        <div class="products-grid">
+
+                            <!-- Product cards here -->
+
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <%- include('../partials/footer') %>
+        <script src="/js/navbar.js"></script>
+    </body>
+
+</html>

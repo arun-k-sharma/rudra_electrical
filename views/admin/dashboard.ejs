@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{title:"Dashboard"}) %>
+
+    <body>
+
+        <div class="admin-layout container">
+
+            <%- include('./partials/sidebar') %>
+
+                <div class="admin-content">
+
+                    <%- include('./partials/header',{ pageTitle:"Dashboard", admin}) %>
+
+                        <main class="dashboard">
+                            <div class="dashboard-cards">
+                                <div class="dashboard-card">
+                                    <div class="card-icon products">
+                                        📦
+                                    </div>
+                                    <div class="card-content">
+                                        <span>Total Products</span>
+                                        <h2>35</h2>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="card-icon gallery">
+                                        🖼️
+                                    </div>
+                                    <div class="card-content">
+                                        <span>Gallery Images</span>
+                                        <h2>18</h2>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="card-icon booking">
+                                        📅
+                                    </div>
+                                    <div class="card-content">
+                                        <span>Bookings</span>
+                                        <h2>12</h2>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-card">
+                                    <div class="card-icon featured">
+                                        ⭐
+                                    </div>
+                                    <div class="card-content">
+                                        <span>Featured Products</span>
+                                        <h2>6</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-table">
+                                <div class="table-header">
+                                    <h2>Recent Products</h2>
+                                    <a href="/admin/products" class="view-all">
+                                        View All
+                                    </a>
+                                </div>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Stock</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>9W LED Bulb</td>
+                                            <td>Lighting</td>
+                                            <td>₹120</td>
+                                            <td>45</td>
+                                        </tr>
+                                        <tr>
+                                            <td>LED Tube Light</td>
+                                            <td>Lighting</td>
+                                            <td>₹350</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PVC Wire</td>
+                                            <td>Wires</td>
+                                            <td>₹1850</td>
+                                            <td>12</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </main>
+                </div>
+
+        </div>
+
+        <script src="/js/sidebar.js"></script>
+
+    </body>
+
+</html>

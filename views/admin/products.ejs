@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{title:"Products"}) %>
+
+    <body>
+
+        <div class="admin-layout">
+
+            <%- include('./partials/sidebar') %>
+
+                <div class="admin-content container">
+
+                    <%- include('./partials/header',{ pageTitle:"Products", admin}) %>
+
+                        <main class="products-page">
+                            <div class="page-top">
+                                <h2>Manage Products</h2>
+                                <a href="/admin/products/add" class="add-btn">
+                                    + Add Product
+                                </a>
+                            </div>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Stock</th>
+                                            <th>Featured</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>
+                                                <img src="/images/products/circuit.avif" class="product-img">
+                                            </td>
+                                            <td>9W LED Bulb</td>
+                                            <td>Lighting</td>
+                                            <td>₹120</td>
+                                            <td>45</td>
+                                            <td>
+                                                <span class="badge success">
+                                                    Yes
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/products/edit/1" class="edit-btn">
+                                                    Edit
+                                                </a>
+                                                <button class="delete-btn">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="/images/products/circuit.avif" class="product-img">
+                                            </td>
+                                            <td>LED Tube Light</td>
+                                            <td>Lighting</td>
+                                            <td>₹350</td>
+                                            <td>22</td>
+                                            <td>
+                                                <span class="badge">
+                                                    No
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="edit-btn">
+                                                    Edit
+                                                </a>
+                                                <button class="delete-btn">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </main>
+                </div>
+        </div>
+                <script src="/js/sidebar.js"></script>
+
+    </body>
+
+</html>

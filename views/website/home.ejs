@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title: "Homepage" }) %>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-container">
+
+                <!-- Left -->
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        ⚡ Trusted Electrical Services
+                    </span>
+
+                    <h1>
+                        Powering Your Home <br>
+                        & Business
+                    </h1>
+
+                    <p>
+                        We provide professional electrical services and quality
+                        electrical products for homes and businesses. From house
+                        wiring and repairs to LED lights, decorative lighting,
+                        switches, fans, coolers, and electrical accessories —
+                        we've got you covered.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="tel:+919999999999" class="btn btn-primary">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone">
+                            <path
+                                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                        </svg>
+
+                            Call Now
+
+                        </a>
+
+                        <a href="/booking" class="btn btn-secondary">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                                <path d="m9 16 2 2 4-4"/>
+                            </svg>
+
+                            Book Service
+
+                        </a>
+
+                    </div>
+
+                    <div class="hero-features">
+
+                        <div>✔ Fast Response</div>
+
+                        <div>✔ Quality Products</div>
+
+                        <div>✔ Trusted Electrician</div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="hero-image">
+
+                    <img src="/images/hero-cover.png"
+                        alt="Electrician">
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- including footer  -->
+    <%- include('../partials/footer') %>
+
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>

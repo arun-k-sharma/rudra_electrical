@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{title:"Book Service"}) %>
+    <body>
+        <%- include('../partials/navbar') %>
+            <main>
+                <section class="page-hero">
+                    <div class="container">
+                        <span class="section-badge">
+                            🔧 Book a Service
+                        </span>
+                        <h1>
+                            Book an Electrical Service
+                        </h1>
+                        <p>
+                            Fill out the form below and we'll contact you as soon as possible.
+                        </p>
+                    </div>
+                </section>
+                <section class="booking">
+                    <div class="container">
+                        <div class="booking-wrapper">
+                            <form>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="Enter phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea rows="3" placeholder="Enter your address"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Select Service</label>
+
+                                    <select>
+                                        <option>House Wiring</option>
+                                        <option>Fan Repair</option>
+                                        <option>Cooler Repair</option>
+                                        <option>LED Installation</option>
+                                        <option>Switch Board Repair</option>
+                                        <option>Decorative Lighting</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Preferred Date</label>
+                                    <input type="date">
+                                </div>
+                                <div class="form-group">
+                                    <label>Describe Your Problem</label>
+                                    <textarea rows="6" placeholder="Write your problem..."></textarea>
+                                </div>
+
+                                <button class="btn btn-primary" type="submit">
+                                    Book Service
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('../partials/footer') %>
+            <script src="/js/navbar.js"></script>
+
+    </body>
+
+</html>

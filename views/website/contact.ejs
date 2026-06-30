@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{title:"Contact"}) %>
+
+    <body>
+        <%- include('../partials/navbar') %>
+            <main>
+                <section class="page-hero">
+                    <div class="container">
+                        <span class="section-badge">
+                            📞 Contact Us
+                        </span>
+                        <h1>Get In Touch</h1>
+                        <p>
+                            Need electrical services or have questions about our products?
+                            We're always happy to help.
+                        </p>
+                    </div>
+                </section>
+                <section class="contact">
+                    <div class="container">
+                        <div class="contact-wrapper">
+                            
+                            <!-- Contact Info -->
+
+                            <div class="contact-info">
+                                <div class="info-card">
+                                    <h3>📍 Address</h3>
+                                    <p>
+                                        Rudra Electrical<br>
+                                        Azamgarh, Uttar Pradesh
+                                    </p>
+                                </div>
+                                <div class="info-card">
+                                    <h3>📞 Phone</h3>
+                                    <p>
+                                        +91 98765 43210
+                                    </p>
+                                </div>
+                                <div class="info-card">
+                                    <h3>📧 Email</h3>
+                                    <p>
+                                        rudraelectrical@gmail.com
+                                    </p>
+                                </div>
+                                <div class="info-card">
+                                    <h3>🕒 Working Hours</h3>
+                                    <p>
+                                        Monday - Saturday<br>
+                                        9:00 AM - 8:00 PM
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Contact Form -->
+
+                            <div class="contact-form">
+                                <h2>Send Message</h2>
+                                <form>
+                                    <input type="text" placeholder="Full Name">
+                                    <input type="tel" placeholder="Phone Number">
+                                    <input type="text" placeholder="Subject">
+                                    <textarea rows="6" placeholder="Write your message..."></textarea>
+                                    <button type="submit" class="btn btn-primary">
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="map">
+                    <div class="container">
+                        <h2>Find Us</h2>
+                        <div class="map-box">
+                            Google Map Here
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <%- include('../partials/footer') %>
+            <script src="/js/navbar.js"></script>
+
+    </body>
+
+</html>

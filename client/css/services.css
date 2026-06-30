@@ -1,0 +1,98 @@
+.page-hero {
+    padding: 80px 0 50px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 44px;
+    margin: 20px 0;
+    color: var(--heading);
+}
+
+.page-hero p {
+    max-width: 600px;
+    margin: auto;
+}
+
+.services {
+    padding: 30px 0 80px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 16px;
+    color: var(--heading);
+}
+
+.service-card p {
+    line-height: 1.7;
+}
+
+.why-us {
+    background: var(--section-bg);
+    padding: 80px 0;
+}
+
+.why-us h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 700px;
+    margin: auto;
+    font-weight: 600;
+}
+
+.service-cta {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.service-cta h2 {
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+
+.service-cta p {
+    margin-bottom: 35px;
+}
+
+.service-cta .hero-buttons {
+    justify-content: center;
+}
+
+@media(max-width:768px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-hero h1 {
+        font-size: 34px;
+    }
+}
