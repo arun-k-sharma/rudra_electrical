@@ -16,7 +16,7 @@
                         <main class="products-page">
                             <div class="page-top">
                                 <h2>Manage Products</h2>
-                                <a href="/admin/products/add" class="add-btn">
+                                <a href="/admin/products/add-product" class="add-btn">
                                     + Add Product
                                 </a>
                             </div>
@@ -35,57 +35,47 @@
                                     </thead>
                                     <tbody>
 
-                                        <tr>
-                                            <td>
-                                                <img src="/images/products/circuit.avif" class="product-img">
-                                            </td>
-                                            <td>9W LED Bulb</td>
-                                            <td>Lighting</td>
-                                            <td>₹120</td>
-                                            <td>45</td>
-                                            <td>
-                                                <span class="badge success">
-                                                    Yes
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <a href="/admin/products/edit/1" class="edit-btn">
-                                                    Edit
-                                                </a>
-                                                <button class="delete-btn">
-                                                    Delete
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="/images/products/circuit.avif" class="product-img">
-                                            </td>
-                                            <td>LED Tube Light</td>
-                                            <td>Lighting</td>
-                                            <td>₹350</td>
-                                            <td>22</td>
-                                            <td>
-                                                <span class="badge">
-                                                    No
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="edit-btn">
-                                                    Edit
-                                                </a>
-                                                <button class="delete-btn">
-                                                    Delete
-                                                </button>
-                                            </td>
-                                        </tr>
+                                        <% products.forEach(product=> { %>
+
+                                            <tr>
+                                                <td>
+                                                    <img src="<%= product.image.url || '/images/products/circuit.avif' %>"
+                                                        class="product-img">
+                                                </td>
+                                                <td>
+                                                    <%= product.name %>
+                                                </td>
+                                                <td>
+                                                    <%= product.category %>
+                                                </td>
+                                                <td>₹<%= product.price %>
+                                                </td>
+                                                <td>
+                                                    <%= product.stock %>
+                                                </td>
+                                                <td>
+                                                    <span class="badge success">
+                                                        Yes
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/products/edit/<%= product._id %>" class="edit-btn">
+                                                        Edit
+                                                    </a>
+                                                    <button class="delete-btn">
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <% }) %>
                                     </tbody>
                                 </table>
                             </div>
                         </main>
                 </div>
         </div>
-                <script src="/js/sidebar.js"></script>
+        <script src="/js/sidebar.js"></script>
 
     </body>
 

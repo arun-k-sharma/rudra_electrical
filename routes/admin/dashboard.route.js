@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', auth, (req, res) => {
     res.render('admin/dashboard', {
         pageTitle:"Dashboard",
-        admin:req.admin
+        admin:req.admin,
+        currentPage: 'dashboard'
     });
 })
 

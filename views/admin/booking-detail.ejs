@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{title:"Booking Details"}) %>
+
+<body>
+
+    <% console.log(bookingId) %>
+
+<div class="admin-layout container">
+
+    <%- include('./partials/sidebar', {
+        admin: admin,
+        currentPage: "bookings"
+    }) %>
+
+    <div class="admin-content">
+
+        <%- include('./partials/header',{
+            pageTitle:"Booking Details"
+        }) %>
+
+        <main class="booking-details-page">
+
+            <div class="booking-card">
+
+                <div class="card-header">
+
+                    <h2>Customer Booking</h2>
+
+                    <a href="/admin/bookings" class="back-btn">
+
+                        ← Back
+
+                    </a>
+
+                </div>
+
+                <form action="/admin/bookings/1" method="POST">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Customer Name</label>
+
+                            <input
+                                type="text"
+                                value="Arun Sharma"
+                                readonly>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Phone Number</label>
+
+                            <input
+                                type="text"
+                                value="9876543210"
+                                readonly>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Service</label>
+
+                            <input
+                                type="text"
+                                value="House Wiring"
+                                readonly>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Preferred Date</label>
+
+                            <input
+                                type="text"
+                                value="03 July 2026"
+                                readonly>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Address</label>
+
+                        <textarea rows="3" readonly>
+
+Near Railway Station,
+Azamgarh,
+Uttar Pradesh
+
+                        </textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Problem Description</label>
+
+                        <textarea rows="6" readonly>
+
+Need complete wiring for a newly constructed room.
+Please visit after 4 PM.
+
+                        </textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Status</label>
+
+                        <select name="status">
+
+                            <option selected>Pending</option>
+
+                            <option>Completed</option>
+
+                            <option>Cancelled</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <a
+                            href="/admin/bookings"
+                            class="cancel-btn">
+
+                            Cancel
+
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="save-btn">
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+<script src="/js/sidebar.js"></script>
+</body>
+
+</html>

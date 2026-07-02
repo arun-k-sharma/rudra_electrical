@@ -7,13 +7,15 @@
 
 <div class="admin-layout container">
 
-    <%- include('./partials/sidebar') %>
+    <%- include('./partials/sidebar', {
+        admin: admin,
+        currentPage: "gallery"
+    }) %>
 
     <div class="admin-content">
 
         <%- include('./partials/header',{
             pageTitle:"Gallery",
-            admin
         }) %>
 
         <main class="gallery-page">
@@ -63,7 +65,7 @@
     </div>
 
 </div>
-
+    <script src="/js/sidebar.js"></script>
 </body>
 
 </html>

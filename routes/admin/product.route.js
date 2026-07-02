@@ -1,34 +1,47 @@
 const express = require('express');
 const auth = require('../../middlewares/auth');
+const upload = require('../../middlewares/upload');
+const productController = require('../../controllers/admin/product.controller');
 
 const router = express.Router();
 
-router.get('/', auth, (req, res) => {
-    console.log(req.admin);
+// Function: showProducts()
+router.get('/', auth, async (req, res) => {
+    const products = await productController.getAllProducts();
     res.render('admin/products', {
-        pageTitle:"Products",
-        admin:req.admin
+        pageTitle: "Products",
+        admin: req.admin,
+        currentPage: 'products',
+        products: products
     });
-})
+});
+
+
+
+// Function: showAddProductPage()
+router.get(
+    '/add-product',
+    auth,
+    productController.getAddProductForm
+);
+
+// POST /admin/products/add-product
+router.post('/add-product', auth, upload.single('image'), (req, res, next) => {
+    console.log("Upload finished");
+    console.log(req.file);
+    next();
+}, productController.addProduct);
 
 
 
 
 module.exports = router;
 
-// GET  /admin/products
 
-// Function: showProducts()
 
-// Description: Display all products in the admin panel.
 
-// GET  /admin/products/add
 
-// Function: showAddProductPage()
 
-// Description: Display the form to add a new product.
-
-// POST /admin/products/add
 
 // Function: createProduct()
 

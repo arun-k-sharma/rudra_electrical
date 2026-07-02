@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{title:"Settings"}) %>
+
+<body>
+
+<div class="admin-layout container">
+
+    <%- include('./partials/sidebar', {
+        currentPage: "settings",
+        admin: admin,
+    }) %>
+
+    <div class="admin-content">
+
+        <%- include('./partials/header',{
+            pageTitle:"Settings"
+        }) %>
+
+        <main class="settings-page">
+
+            <div class="settings-card">
+
+                <h2>Business Settings</h2>
+
+                <form action="/admin/settings" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Shop Name</label>
+                            <input
+                                type="text"
+                                name="shopName"
+                                placeholder="Rudra Electrical">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input
+                                type="text"
+                                name="phone"
+                                placeholder="9876543210">
+                        </div>
+
+                        <div class="form-group">
+                            <label>WhatsApp Number</label>
+                            <input
+                                type="text"
+                                name="whatsapp"
+                                placeholder="9876543210">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="rudra@gmail.com">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Shop Address</label>
+
+                        <textarea
+                            rows="4"
+                            name="address"
+                            placeholder="Enter shop address"></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Google Maps Link</label>
+
+                        <input
+                            type="url"
+                            name="mapLink"
+                            placeholder="https://maps.google.com/...">
+
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Opening Time</label>
+
+                            <input
+                                type="time"
+                                name="openingTime">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Closing Time</label>
+
+                            <input
+                                type="time"
+                                name="closingTime">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Upload Shop Logo</label>
+
+                        <input
+                            type="file"
+                            name="logo"
+                            accept="image/*">
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <button
+                            type="submit"
+                            class="save-btn">
+
+                            Save Settings
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+<script src="/js/sidebar.js"></script>
+</body>
+
+</html>

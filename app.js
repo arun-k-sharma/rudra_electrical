@@ -11,6 +11,8 @@ const adminRouter = require('./routes/admin/auth.route');
 const dashboardRouter = require('./routes/admin/dashboard.route');
 const adminProductRouter = require('./routes/admin/product.route');
 const adminGalleryRouter = require('./routes/admin/gallery.route');
+const adminBookingRouter = require('./routes/admin/booking.route');
+const settingRouter = require('./routes/admin/settings.route');
 
 
 const app = express();
@@ -42,6 +44,9 @@ app.use('/admin/products', adminProductRouter);
 
 app.use('/admin/gallery', adminGalleryRouter);
 
+app.use('/admin/bookings', adminBookingRouter);
+
+app.use('/admin/settings', settingRouter);
 
 
 

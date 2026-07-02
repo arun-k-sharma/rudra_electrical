@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{title:"Bookings"}) %>
+
+<body>
+
+<div class="admin-layout container">
+
+    <%- include('./partials/sidebar', { 
+        admin: admin,
+        currentPage: "bookings"
+    }) %>
+
+    <div class="admin-content">
+
+        <%- include('./partials/header',{
+            pageTitle:"Bookings",
+        }) %>
+
+        <main class="bookings-page">
+
+            <div class="page-top">
+
+                <h2>Service Bookings</h2>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Arun Sharma</td>
+
+                            <td>9876543210</td>
+
+                            <td>House Wiring</td>
+
+                            <td>03 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status pending">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="/admin/bookings/1"
+                                   class="view-btn">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Ravi Singh</td>
+
+                            <td>9123456780</td>
+
+                            <td>Fan Repair</td>
+
+                            <td>02 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status completed">
+
+                                    Completed
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="/admin/bookings/2"
+                                   class="view-btn">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Amit Yadav</td>
+
+                            <td>9988776655</td>
+
+                            <td>LED Installation</td>
+
+                            <td>01 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status pending">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="/admin/bookings/3"
+                                   class="view-btn">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+    <script src="/js/sidebar.js"></script>
+</body>
+
+</html>
