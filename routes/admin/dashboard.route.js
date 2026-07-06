@@ -1,8 +1,8 @@
 const express = require('express');
 const auth = require('../../middlewares/auth');
-const Product = require('../../models/product');
-const Gallery = require('../../models/gallery');
-const Booking = require('../../models/booking');
+const Product = require('../../models/Product');
+const Gallery = require('../../models/Gallery');
+const Booking = require('../../models/Booking');
 
 
 const router = express.Router();

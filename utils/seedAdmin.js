@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const Admin = require('../models/admin');
+const Admin = require('../models/Admin');
 
 async function seedAdmin() {
     const admin = await Admin.findOne({

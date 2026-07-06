@@ -1,5 +1,5 @@
 const cloudinary  = require('../../config/cloudinary');
-const Gallery = require('../../models/gallery');
+const Gallery = require('../../models/Gallery');
 
 async function add(req, res) {
     res.render('admin/gallery-form', {

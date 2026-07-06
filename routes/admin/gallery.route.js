@@ -2,7 +2,7 @@ const express = require('express');
 const auth = require('../../middlewares/auth');
 const galleryController = require('../../controllers/admin/gallery.controller');
 const upload = require('../../middlewares/upload');
-const Gallery = require('../../models/gallery');
+const Gallery = require('../../models/Gallery');
 
 const router = express.Router();
 

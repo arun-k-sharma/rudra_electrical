@@ -1,4 +1,4 @@
-const Gallery = require('../../models/gallery');
+const Gallery = require('../../models/Gallery');
 
 async function showGallery(req, res) {
     try {
