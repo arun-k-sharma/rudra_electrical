@@ -35,8 +35,8 @@
 
                             <% galleryItems.forEach(item=> { %>
                                 <div class="gallery-item">
-                                    <img src="<%= item.image.url  || '/images/products/circuit.avif' %>"
-                                        alt="Gallery Image">
+                                    <img src="<%= item.image.url  || '/images/products/placeholder.jpg' %>"
+                                        alt="Gallery Image" loading="lazy">
                                 </div>
                                 <% }) %>
                         </div>

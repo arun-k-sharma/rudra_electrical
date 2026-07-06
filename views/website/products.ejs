@@ -71,8 +71,8 @@
                     
                     <% products.forEach(product => { %>
                         <div class="product-card">
-                            <img src="<%= product.image.url || product.image ||'' %>"
-                                alt="Product">
+                            <img src="<%= product.image.url ||'/images/products/placeholder.jpg' %>"
+                                alt="Product" loading="lazy">
                             <span class="product-category">
                                 <%= product.category %>
                             </span>
