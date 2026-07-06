@@ -21,23 +21,23 @@
                 <section class="booking">
                     <div class="container">
                         <div class="booking-wrapper">
-                            <form>
+                            <form action="/booking" method="POST">
                                 <div class="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" placeholder="Enter your name">
+                                    <input type="text" placeholder="Enter your name" name="fullName" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="tel" placeholder="Enter phone number">
+                                    <input type="tel" placeholder="Enter phone number" name="number" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <textarea rows="3" placeholder="Enter your address"></textarea>
+                                    <textarea rows="3" placeholder="Enter your address" name="address" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Select Service</label>
 
-                                    <select>
+                                    <select name="service" required>
                                         <option>House Wiring</option>
                                         <option>Fan Repair</option>
                                         <option>Cooler Repair</option>
@@ -49,11 +49,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Preferred Date</label>
-                                    <input type="date">
+                                    <input type="date" name="date" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Describe Your Problem</label>
-                                    <textarea rows="6" placeholder="Write your problem..."></textarea>
+                                    <textarea rows="6" placeholder="Write your problem..." name="problemDescription" required></textarea>
                                 </div>
 
                                 <button class="btn btn-primary" type="submit">

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', { title: "404 Not Found" }) %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('./partials/sidebar', { currentPage: null }) %>
+
+        <div class="main-content">
+
+
+            <main class="error-page">
+
+                <h1>404</h1>
+
+                <p>The page you're looking for doesn't exist.</p>
+
+                <a href="/admin/dashboard" class="btn">
+                    Back to Dashboard
+                </a>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+
+</body>
+
+</html>

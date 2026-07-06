@@ -3,162 +3,137 @@
 
 <%- include('./partials/head',{title:"Booking Details"}) %>
 
-<body>
+    <body>
 
-    <% console.log(bookingId) %>
+        <% console.log(booking._id) %>
 
-<div class="admin-layout container">
+            <div class="admin-layout container">
 
-    <%- include('./partials/sidebar', {
-        admin: admin,
-        currentPage: "bookings"
-    }) %>
+                <%- include('./partials/sidebar', { admin: admin, currentPage: "bookings" }) %>
 
-    <div class="admin-content">
+                    <div class="admin-content">
 
-        <%- include('./partials/header',{
-            pageTitle:"Booking Details"
-        }) %>
+                        <%- include('./partials/header',{ pageTitle:"Booking Details" }) %>
 
-        <main class="booking-details-page">
+                            <main class="booking-details-page">
 
-            <div class="booking-card">
+                                <div class="booking-card">
 
-                <div class="card-header">
+                                    <div class="card-header">
 
-                    <h2>Customer Booking</h2>
+                                        <h2>Customer Booking</h2>
 
-                    <a href="/admin/bookings" class="back-btn">
+                                        <a href="/admin/bookings" class="back-btn">
 
-                        ← Back
+                                            ← Back
 
-                    </a>
+                                        </a>
 
-                </div>
+                                    </div>
 
-                <form action="/admin/bookings/1" method="POST">
+                                    <form action="/admin/bookings/<%= booking._id %>" method="POST">
 
-                    <div class="form-grid">
+                                        <div class="form-grid">
 
-                        <div class="form-group">
+                                            <div class="form-group">
 
-                            <label>Customer Name</label>
+                                                <label>Customer Name</label>
 
-                            <input
-                                type="text"
-                                value="Arun Sharma"
-                                readonly>
+                                                <input type="text" value="<%= booking.fullName %>" readonly>
 
-                        </div>
+                                            </div>
 
-                        <div class="form-group">
+                                            <div class="form-group">
 
-                            <label>Phone Number</label>
+                                                <label>Phone Number</label>
 
-                            <input
-                                type="text"
-                                value="9876543210"
-                                readonly>
+                                                <input type="text" value="<%= booking.number %>" readonly>
 
-                        </div>
+                                            </div>
 
-                        <div class="form-group">
+                                            <div class="form-group">
 
-                            <label>Service</label>
+                                                <label>Service</label>
 
-                            <input
-                                type="text"
-                                value="House Wiring"
-                                readonly>
+                                                <input type="text" value="<%= booking.service %>" readonly>
 
-                        </div>
+                                            </div>
 
-                        <div class="form-group">
+                                            <div class="form-group">
 
-                            <label>Preferred Date</label>
+                                                <label>Preferred Date</label>
 
-                            <input
-                                type="text"
-                                value="03 July 2026"
-                                readonly>
+                                                <input type="text" value="<%= booking.date.toLocaleDateString() %> "
+                                                    readonly>
 
-                        </div>
+                                            </div>
 
-                    </div>
+                                        </div>
 
-                    <div class="form-group">
+                                        <div class="form-group">
 
-                        <label>Address</label>
+                                            <label>Address</label>
 
-                        <textarea rows="3" readonly>
-
-Near Railway Station,
-Azamgarh,
-Uttar Pradesh
+                                            <textarea rows="3" readonly>
+<%= booking.address %>
 
                         </textarea>
 
-                    </div>
+                                        </div>
 
-                    <div class="form-group">
+                                        <div class="form-group">
 
-                        <label>Problem Description</label>
+                                            <label>Problem Description</label>
 
-                        <textarea rows="6" readonly>
-
-Need complete wiring for a newly constructed room.
-Please visit after 4 PM.
-
+                                            <textarea rows="6" readonly>
+<%= booking.problemDescription %>
                         </textarea>
 
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label>Status</label>
+
+                                            <select name="status">
+
+                                                <option value="Pending" <%=booking.status==='Pending' ? 'selected' : ''
+                                                    %>>Pending</option>
+
+                                                <option>Completed</option>
+
+                                                <option>Cancelled</option>
+
+                                            </select>
+
+                                        </div>
+
+                                        <div class="button-group">
+
+                                            <a href="/admin/bookings" class="cancel-btn">
+
+                                                Cancel
+
+                                            </a>
+
+                                            <button type="submit" class="save-btn">
+
+                                                Save Changes
+
+                                            </button>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </main>
+
                     </div>
-
-                    <div class="form-group">
-
-                        <label>Status</label>
-
-                        <select name="status">
-
-                            <option selected>Pending</option>
-
-                            <option>Completed</option>
-
-                            <option>Cancelled</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="button-group">
-
-                        <a
-                            href="/admin/bookings"
-                            class="cancel-btn">
-
-                            Cancel
-
-                        </a>
-
-                        <button
-                            type="submit"
-                            class="save-btn">
-
-                            Save Changes
-
-                        </button>
-
-                    </div>
-
-                </form>
 
             </div>
-
-        </main>
-
-    </div>
-
-</div>
-<script src="/js/sidebar.js"></script>
-</body>
+            <script src="/js/sidebar.js"></script>
+    </body>
 
 </html>

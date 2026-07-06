@@ -201,3 +201,51 @@ body {
     }
 
 }
+
+/* .error-msg {
+    padding: 15px 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #fce6e4;
+    border: 1.5px solid #ff9e95;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #212121;
+} */
+
+.error-msg {
+    padding: 15px 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #fce6e4;
+    border: 1.5px solid #ff9e95;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #212121;
+    opacity: 0;
+    animation: error-msg 5s ease-in;
+}
+
+@keyframes error-msg {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%, 100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateX(-50%, 0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateX(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%, 100%);
+  }
+}

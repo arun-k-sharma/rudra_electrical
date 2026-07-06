@@ -74,6 +74,12 @@
 
         </div>
 
+        <% if(locals.error) {%>
+            <div class="error-msg">
+                <%= locals.error %>
+            </div>
+            <% } %>
+
     </main>
 
     <script>

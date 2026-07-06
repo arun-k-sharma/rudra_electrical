@@ -1,12 +1,15 @@
-// routes/booking.routes.js (Website)
-// GET  /booking
+const express = require('express');
+const router = express.Router();
 
-// Function: showBookingPage()
+const bookingController = require('../controllers/website/booking.controller');
 
-// Description: Display the service booking form.
 
-// POST /booking
 
-// Function: createBooking()
+router.get('/', (req, res) => {
+    res.render('website/booking');
+});
 
-// Description: Save a new service booking.
+
+router.post('/', bookingController.createBooking);
+
+module.exports = router;

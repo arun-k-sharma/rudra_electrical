@@ -1,12 +1,9 @@
-// routes/contact.routes.js (Website)
-// GET  /contact
+const router = require('express').Router();
 
-// Function: showContactPage()
 
-// Description: Display the contact page.
+router.get('/', (req, res) => {
+    res.render('website/contact');
+});
 
-// POST /contact
 
-// Function: submitContactForm()
-
-// Description: Save or process a customer's contact message.
+module.exports = router;

@@ -26,11 +26,16 @@ router.get(
 );
 
 // POST /admin/products/add-product
-router.post('/add-product', auth, upload.single('image'), (req, res, next) => {
+router.post('/add-product', auth, upload.single('image'),  (req, res, next) => {
     console.log("Upload finished");
     console.log(req.file);
     next();
 }, productController.addProduct);
+
+
+
+// POST /admin/products/delete/:id
+router.post("/delete/:id", productController.deleteProduct);
 
 
 

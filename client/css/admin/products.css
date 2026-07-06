@@ -72,6 +72,11 @@ td {
     color: #15803D;
 }
 
+.failed {
+    background: #FEE2E2;
+    color: #B91C1C;
+}
+
 .edit-btn {
     background: #2563EB;
     color: white;

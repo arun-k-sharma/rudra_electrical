@@ -8,11 +8,11 @@ const port = process.env.PORT || 8080;
 
 const startServer = async () => {
   try {
-    await connectDB('mongodb://127.0.0.1:27017/rudra_electricals');
+    await connectDB(process.env.MONGO_URI);
 
     await seedAdmin();
 
-    app.listen(port, () => {
+    app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${port}`);
     });
   } catch (error) {

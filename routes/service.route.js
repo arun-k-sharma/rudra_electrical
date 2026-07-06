@@ -1,5 +1,8 @@
-// GET  /services
+const router = require('express').Router();
 
-// Function: showServices()
+router.get('/', (req, res) => {
+    res.render('website/services');
+});
 
-// Description: Display all electrical services.
+
+module.exports = router;

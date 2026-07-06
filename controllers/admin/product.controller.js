@@ -1,4 +1,5 @@
 const Product = require('../../models/product');
+const cloudinary = require('../../config/cloudinary');
 
 // showProducts()
 // │      showAddProductPage()
@@ -14,9 +15,9 @@ function getAddProductForm(req, res) {
 //adding new product to the database
 async function addProduct(req, res) {
     try {
-
-        console.log('Request Body:', req.body);
-        console.log('Uploaded File:', req.file);
+        if(!req.file) {
+            return res.status(400).send("Please upload an image.");
+        }
         const product = await Product.create({
             name: req.body.name,
             price: req.body.price,
@@ -57,8 +58,34 @@ async function getAllProducts() {
     }
 }
 
+//deleteProduct() - Delete a product by ID
+async function deleteProduct(req, res) {
+    try {
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+
+        //return if product is not found
+        if (!product) {
+            return res.redirect("/admin/products");
+        }
+
+        // Delete the image from Cloudinary
+        if (product.image.public_id) {
+            await cloudinary.uploader.destroy(product.image.public_id);
+        }
+
+        await Product.findByIdAndDelete(productId);
+        res.redirect('/admin/products');
+
+    } catch (error) {
+        console.error('Error deleting product:', error);
+        res.status(500).send('Error deleting product');
+    }
+}
+
 module.exports = {
     getAddProductForm,
     addProduct,
-    getAllProducts
+    getAllProducts,
+    deleteProduct
 };

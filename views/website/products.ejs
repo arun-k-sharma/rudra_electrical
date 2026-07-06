@@ -39,20 +39,21 @@
                         <circle cx="11" cy="11" r="8"/>
                     </svg>
                     <input
+                        disabled
                         type="search"
-                        placeholder="Search products...">
+                        placeholder="coming soon this feature...">
                 </div>
             </div>
         </section>
 
         <!-- Categories -->
 
-        <section class="categories">
+        <!-- <section class="categories">
             <div class="container">
                 <div class="category-list">
                     <button class="active">All</button>
                     <button>Lighting</button>
-                    <button>Wires</button>
+                    <btton>Wires</button>
                     <button>Switches</button>
                     <button>Sockets</button>
                     <button>Protection</button>
@@ -60,7 +61,7 @@
                     <button>Decorative</button>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Products -->
 
@@ -85,6 +86,22 @@
                         </div>
                     <% }) %>
                 </div>
+
+                <div class="pagingnation">
+                    <% if(currentPage > 1) {%>
+                        <a href="/products?page=<%=currentPage-1 %>">Prev</a>
+                    <% } %>
+
+                    <% for(let i=1; i<=totalPages; i++) {%>
+                    <a href="/products?page=<%= i %>"><%= i %></a>             
+                    <% } %>
+
+                    <% if(currentPage < totalPages) { %>
+                        <a href="/products?page=<%= currentPage+1 %>">Next</a>
+                    <%} %>
+                </div>
+
+                
             </div>
         </section>
     </main>

@@ -7,58 +7,56 @@ async function showLoginPage(req, res) {
     res.render('admin/login');
 }
 
-//login
+// Login
 async function login(req, res) {
     try {
+
         const { username, password } = req.body;
 
         const admin = await Admin.findOne({ username });
 
-        if (!admin) return res.status(401).json({
-            // message: "Invalid credentials"
-            message:"Admin not found in DB"
-        });
-
-        const valid = await bcrypt.compare(
-            password,
-            admin.password
-        );
-
-        if (!valid) {
-            return res.status(401).json({
-                // message: "Invalid credentials"
-                message: "Not valid password"
-            })
+        if (!admin) {
+            return res.status(401).render("admin/login", {
+                error: "Invalid username or password."
+            });
         }
 
-        const token = jwt.sign({
-            id: admin._id,
-            username: admin.username
-        },
-            process.env.JWT_SECRET,
+        const valid = await bcrypt.compare(password, admin.password);
 
-            {
-                expiresIn: '1d'
+        if (!valid) {
+            return res.status(401).render("admin/login", {
+                error: "Invalid username or password."
             });
+        }
 
-        res.cookie('token', token, {
+        const token = jwt.sign(
+            {
+                id: admin._id,
+                username: admin.username
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d"
+            }
+        );
+
+        res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: 'lax',
+            secure: false, // Change to true when using HTTPS in production
+            sameSite: "lax",
             maxAge: 24 * 60 * 60 * 1000
         });
 
-        res.json({
-            message: "Login successfully"
-        });
-
+        return res.redirect("/admin/dashboard");
 
     } catch (err) {
-        
-        console.log("Error",err);
-        return res.status(401).json({
-            message: "It throws error",
+
+        console.error("Login Error:", err);
+
+        return res.status(500).render("admin/login", {
+            error: "Something went wrong. Please try again."
         });
+
     }
 }
 
@@ -67,9 +65,7 @@ async function logout(req, res) {
     try {
         res.clearCookie('token');
 
-        res.json({
-            message: "Logged out"
-        })
+        res.render('admin/login');
     } catch (err) {
         console.log(err);
         return res.status(401).json({

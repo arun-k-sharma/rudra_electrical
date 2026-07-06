@@ -15,7 +15,7 @@ async function seedAdmin() {
         password: hash
     });
 
-    console.log('Admin created...!');
+    // console.log('Admin created...!');
 }
 
 module.exports = seedAdmin;

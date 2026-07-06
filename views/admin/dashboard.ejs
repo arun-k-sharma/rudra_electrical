@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="card-content">
                                         <span>Total Products</span>
-                                        <h2>35</h2>
+                                        <h2><%= productCount %></h2>
                                     </div>
                                 </div>
                                 <div class="dashboard-card">
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="card-content">
                                         <span>Gallery Images</span>
-                                        <h2>18</h2>
+                                        <h2><%= imageCount %></h2>
                                     </div>
                                 </div>
                                 <div class="dashboard-card">
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="card-content">
                                         <span>Bookings</span>
-                                        <h2>12</h2>
+                                        <h2><%= bookingCount %></h2>
                                     </div>
                                 </div>
 
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="card-content">
                                         <span>Featured Products</span>
-                                        <h2>6</h2>
+                                        <h2><%= featuredCount %></h2>
                                     </div>
                                 </div>
                             </div>
@@ -73,24 +73,14 @@
                                     </thead>
 
                                     <tbody>
+                                        <% recentProducts.forEach(product => { %>
                                         <tr>
-                                            <td>9W LED Bulb</td>
-                                            <td>Lighting</td>
-                                            <td>₹120</td>
-                                            <td>45</td>
+                                            <td><%= product.name %></td>
+                                            <td><%= product.category %></td>
+                                            <td>₹<%= product.price %></td>
+                                            <td><%= product.stock %></td>
                                         </tr>
-                                        <tr>
-                                            <td>LED Tube Light</td>
-                                            <td>Lighting</td>
-                                            <td>₹350</td>
-                                            <td>20</td>
-                                        </tr>
-                                        <tr>
-                                            <td>PVC Wire</td>
-                                            <td>Wires</td>
-                                            <td>₹1850</td>
-                                            <td>12</td>
-                                        </tr>
+                                        <% }) %>
                                     </tbody>
 
                                 </table>

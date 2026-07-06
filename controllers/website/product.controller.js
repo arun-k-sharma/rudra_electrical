@@ -4,16 +4,22 @@ const Product = require('../../models/product');
 //get products
 async function getProducts(req, res) {
     try {
-        const products = await Product.find({});
+        const pages = parseInt(req.query.page) || 1;
+        const limit = 12;
+
+        const totalPages = await Product.countDocuments();
+        
+        const products = await Product.find()
+            .skip((pages-1)*limit)
+            .limit(limit);
 
         res.render('website/products', {
-            products
+            products,
+            totalPages:Math.ceil(totalPages / limit),
+            currentPage:pages
         });
 
-        // return res.status(200).json({
-        //     message: "Product fetched successfully",
-        //     products
-        // })
+        
     } catch (err) {
         console.log('Failed to Fetch Data...!');
         res.status(500).json({

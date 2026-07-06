@@ -3,69 +3,67 @@
 
 <%- include('./partials/head',{title:"Gallery"}) %>
 
-<body>
+    <body>
 
-<div class="admin-layout container">
+        <div class="admin-layout container">
 
-    <%- include('./partials/sidebar', {
-        admin: admin,
-        currentPage: "gallery"
-    }) %>
+            <%- include('./partials/sidebar', { admin: admin, currentPage: "gallery" }) %>
 
-    <div class="admin-content">
+                <div class="admin-content">
 
-        <%- include('./partials/header',{
-            pageTitle:"Gallery",
-        }) %>
+                    <%- include('./partials/header',{ pageTitle:"Gallery", }) %>
 
-        <main class="gallery-page">
+                        <main class="gallery-page">
 
-            <div class="page-top">
+                            <div class="page-top">
 
-                <h2>Manage Gallery</h2>
+                                <h2>Manage Gallery</h2>
 
-                <a href="/admin/gallery/add" class="add-btn">
+                                <a href="/admin/gallery/add" class="add-btn">
 
-                    + Upload Image
+                                    + Upload Image
 
-                </a>
+                                </a>
 
-            </div>
+                            </div>
 
-            <div class="gallery-grid">
+                            <div class="gallery-grid">
 
-                <% for(let i=1;i<=8;i++){ %>
+                                <% galleryImages.forEach((image)=> { %>
+                                    <div class="gallery-card">
 
-                <div class="gallery-card">
+                                        <img src="<%= image.image.url || '/images/products/circuit.avif' %>"
+                                            alt="Gallery">
 
-                    <img
-                    src="/images/products/circuit.avif"
-                    alt="Gallery">
+                                        <div class="gallery-info">
 
-                    <div class="gallery-info">
+                                            <h4>
+                                                <%= image.title || 'Not Awailable' %>
+                                            </h4>
 
-                        <h4>House Wiring</h4>
+                                            <form action="/admin/gallery/delete/<%=image._id %>" method="POST">
+                                                <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this image?');">
 
-                        <button class="delete-btn">
+                                                    Delete
 
-                            Delete
+                                                </button>
+                                            </form>
 
-                        </button>
 
-                    </div>
+                                        </div>
+
+                                    </div>
+
+                                    <% }) %>
+
+                            </div>
+
+                        </main>
 
                 </div>
 
-                <% } %>
-
-            </div>
-
-        </main>
-
-    </div>
-
-</div>
-    <script src="/js/sidebar.js"></script>
-</body>
+        </div>
+        <script src="/js/sidebar.js"></script>
+    </body>
 
 </html>

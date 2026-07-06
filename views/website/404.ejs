@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('../partials/head', { title: '404 Not Found' }) %>
+
+        <style>
+            .page {
+                height: 95vh;
+                text-align: center;
+            }
+
+            .page h1 {
+                font-weight: 800;
+                line-height:120px;
+            }
+
+        </style>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+
+        <div class="container page">
+            <h1>404 Page Not Found</h1>
+            <h2>Oops! The page you're looking for doesn't exist. <br>
+
+                It may have been moved or the URL may be incorrect.</h2>
+        </div>
+
+        <%- include('../partials/footer') %>
+        <script src="/js/navbar.js"></script>
+</body>
+
+</html>

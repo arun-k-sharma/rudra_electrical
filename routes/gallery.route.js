@@ -1,6 +1,6 @@
-// routes/gallery.routes.js (Website)
-// GET  /gallery
+const router = require('express').Router();
+const galleryController = require('../controllers/website/gallery.controller');
 
-// Function: showGallery()
+router.get('/', galleryController.showGallery);
 
-// Description: Display completed work and project images.
+module.exports = router;

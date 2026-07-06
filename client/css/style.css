@@ -13,138 +13,84 @@
 }
 
 .navbar{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     min-height:80px;
-
 }
 
 .logo{
-
     font-size:1.5rem;
-
     font-weight:700;
-
     color:var(--heading);
-
 }
 
 .nav-links{
-
     display:flex;
-
     align-items:center;
-
     gap:32px;
-
 }
 
 .nav-links li{
-
     list-style:none;
-
 }
 
 .nav-links a{
-
     text-decoration:none;
-
     color:var(--heading);
-
     font-weight:500;
-
     position:relative;
-
     transition:.3s;
-
 }
 
 .nav-links a::after{
-
     content:"";
-
     position:absolute;
-
     left:0;
     bottom:-8px;
-
     width:0;
-
     height:2px;
-
     background:var(--primary);
-
     transition:.3s;
-
 }
 
 .nav-links a:hover{
-
     color:var(--primary);
-
 }
 
 .nav-links a:hover::after{
-
     width:100%;
-
 }
 
 /* Call Button */
 
 .call-btn{
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
     padding:12px 22px;
-
     border-radius:999px;
-
     text-decoration:none;
-
     background:var(--accent);
-
     color:white;
-
     font-weight:600;
-
     transition:.3s;
-
     box-shadow:0 8px 20px rgba(245,158,11,.30);
-
 }
 
 .call-btn:hover{
-
     background:var(--accent-hover);
-
     transform:translateY(-3px);
-
 }
 
 /* Mobile Button */
 
 .menu-btn{
-
     display:none;
-
     border:none;
-
     background:none;
-
     cursor:pointer;
-
     color:var(--heading);
-
 }
 
 /* ==========================
@@ -152,49 +98,29 @@
 ========================== */
 
 @media(max-width:992px){
-
 .nav-links{
-
     position:fixed;
-
     top:80px;
-
-    right:-100%;
-
+    right:100%;
     width:280px;
-
     height:calc(100vh - 80px);
-
     background:white;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:flex-start;
-
     align-items:flex-start;
-
     padding:40px 30px;
-
     gap:28px;
-
     box-shadow:-5px 0 25px rgba(0,0,0,.08);
-
     transition:.35s ease;
-
 }
 
 .nav-links.active{
-
     right:0;
-
 }
 
 .nav-right{
-
     display:none;
-
 }
 
 .menu-btn{
@@ -291,4 +217,22 @@
         flex-direction: column;
     }
 
+}
+
+/* Pagingnation  */
+.pagingnation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pagingnation a {
+    background-color: rgb(249, 157, 124);
+    color: black;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 4px;
 }
