@@ -162,9 +162,9 @@ Add screenshots of:
 
 BCA Graduate | Full Stack Web Developer
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/arun-k-sharma
 
-LinkedIn: https://linkedin.com/in/yourusername
+LinkedIn: https://linkedin.com/in/arun-k-sharma
 
 ---
 
