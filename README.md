@@ -79,7 +79,7 @@ Rudra-Electricals/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/rudra-electricals.git
+git clone https://github.com/arun-k-sharma/rudra-electricals.git
 ```
 
 Go inside the project
@@ -128,19 +128,7 @@ npm run dev
 - Database: MongoDB Atlas
 - Image Storage: Cloudinary
 
----
 
-## 📸 Screenshots
-
-Add screenshots of:
-
-- Home Page
-- Products Page
-- Product Details
-- Admin Dashboard
-- Add Product Page
-
----
 
 ## 📌 Future Improvements
 
