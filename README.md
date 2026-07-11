@@ -152,7 +152,7 @@ BCA Graduate | Full Stack Web Developer
 
 GitHub: https://github.com/arun-k-sharma
 
-LinkedIn: https://linkedin.com/in/arun-kumar-sharma
+LinkedIn: https://www.linkedin.com/in/arun-kumar-sharma-19b91b316
 
 ---
 
